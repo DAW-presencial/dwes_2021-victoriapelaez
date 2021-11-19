@@ -7,7 +7,7 @@
             echo "<tr>";
             echo "<th/>";
             for ($i = 0; $i <= 10; $i++) {
-                echo "<th style='background-color:beige'>La Tabla de multiplicar de " . $i . " es: </th>";
+                echo "<th style='background-color:#f5f5dc'>La Tabla de multiplicar de " . $i . " es: </th>";
             }
             echo "</tr>";
             for ($i = 0; $i <= 10; $i++) {
