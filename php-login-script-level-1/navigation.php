@@ -20,7 +20,8 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <!-- link to the "Cart" page, highlight if current page is cart.php -->
-                <li <?php echo $page_title="Index" ? "class='active'" : ""; ?>>
+                <li <?php echo $page_title="Index" ? "Index" : ""; ?>>
+<!--                    <li --><?php //echo $page_title="Index" ? "class='active'" : ""; ?><!-->-->
                     <a href="<?php echo $home_url; ?>">Home</a>
                 </li>
             </ul>

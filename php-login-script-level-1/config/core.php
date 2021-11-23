@@ -9,7 +9,7 @@ session_start();
 date_default_timezone_set('Asia/Manila');
 
 // home page url
-$home_url="http://localhost/php-login-script-level-1/";
+$home_url="/dwes_2021-victoriapelaez/php-login-script-level-1/";
 
 // page given in URL parameter, default page is one
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
