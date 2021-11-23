@@ -1,3 +1,4 @@
+
 <!-- navbar -->
 <div class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container-fluid">
@@ -12,18 +13,20 @@
             </button>
 
             <!-- Change "Your Site" to your site name -->
+
             <a class="navbar-brand" href="<?php echo $home_url; ?>">Your Site</a>
         </div>
 
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <!-- link to the "Cart" page, highlight if current page is cart.php -->
-                <li <?php echo $page_title=="Index" ? "class='active'" : ""; ?>>
+                <li <?php echo $page_title="Index" ? "class='active'" : ""; ?>>
                     <a href="<?php echo $home_url; ?>">Home</a>
                 </li>
             </ul>
 
             <?php
+
             // login and logout options will be here
             // check if users / customer was logged in
             // if user was logged in, show "Edit Profile", "Orders" and "Logout" options

@@ -9,7 +9,7 @@ session_start();
 date_default_timezone_set('Asia/Manila');
 
 // home page url
-$home_url="http://localhost/dwes_2021-victoriapelaez/loginSystem/";
+$home_url="http://localhost/php-login-script-level-1/";
 
 // page given in URL parameter, default page is one
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -19,4 +19,3 @@ $records_per_page = 5;
 
 // calculate for the query LIMIT clause
 $from_record_num = ($records_per_page * $page) - $records_per_page;
-?>

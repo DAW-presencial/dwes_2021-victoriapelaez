@@ -40,4 +40,3 @@ echo "</div>";
 
 // footer HTML and JavaScript codes
 include 'layout_foot.php';
-?>
