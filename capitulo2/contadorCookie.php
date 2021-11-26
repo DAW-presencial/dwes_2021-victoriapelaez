@@ -1,4 +1,8 @@
 <?php
+/*session start() te mira si hay cookie de sesion. Si no hay cookie, creo sesion. Si existe, pregunta si existe en disco
+ * recupera todos los datos de la sesion. si no esta en disco, crea sesion.  Puede estar caducada pero estar en disco
+ * Normalmente no se destruyen siempre las sesiones ni las cookies
+*/
 setcookie("FirstCookie", 0);
 ?>
 <html>
