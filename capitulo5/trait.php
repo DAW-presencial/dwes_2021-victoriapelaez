@@ -14,6 +14,7 @@ trait B
     protected $e;
     public $f;
     protected $g = 7;
+    //protected $a =5;
 }
 
 class C

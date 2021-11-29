@@ -17,6 +17,9 @@ include_once "layout_header.php";
 
 // contents will be here
 echo "<div class='right-button-margin'>
+    <a href='create_product.php' class='btn btn-default pull-right'>Create Product</a>
+</div>";
+echo "<div class='right-button-margin'>
         <a href='index.php' class='btn btn-default pull-right'>Read Products</a>
     </div>";
 
