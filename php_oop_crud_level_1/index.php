@@ -90,6 +90,7 @@ if ($num > 0) {
 else {
     echo "<div class='alert alert-info'>No products found.</div>";
 }
+
 // set page footer
 include_once "layout_footer.php";
 ?>
