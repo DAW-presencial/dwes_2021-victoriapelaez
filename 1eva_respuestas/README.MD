@@ -4,6 +4,14 @@
 ###mpelaez@g1.ifc33b.cifpfbmoll.eu
 
 #PREGUNTA 4
+Como ya sabía y se puede ver en el ejemplo del archivo de este mismo directorio 
+pregunta4.php, si no se definen propiedades en el hijo, pero hereda del padre va a heredar los valores definidos en las variables de la clase
+padre. Para poder acceder a las privadas y protegidas si es necesario haber creado los metodos magicos set y get. Para una variable publica
+no es necesario esas funciones magicas.
+Por lo tanto.
+a) si se activan
+b) afecta en que si no se establecen las funciones magicas get y set en la clase padre, aunque heredase, no podria acceder a ellas.
+
 
 #PREGUNTA 5
 La pregunta 5 corresponde a un formulario con diferentes inputs.
