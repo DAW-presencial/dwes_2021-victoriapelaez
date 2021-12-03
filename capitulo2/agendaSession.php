@@ -1,9 +1,19 @@
 <?php
-session_start();
+session_start(/*aqui podria ir una cookie*/);
 echo session_id() . "<br>";
 echo session_name() . "<br>";
 ?>
+<?php
+/*// Borrar cookie y sesion
 
+    if (isset ($_COOKIE[session_name()])) {
+        setcookie(session_name(), "", time() - 3600, "/");
+        unset($_COOKIE[session_name()]);
+    }
+    session_unset(); // o bien $_SESSION = array();
+    session_destroy();
+
+*/?>
 <!DOCTYPE html>
 
 <html>
@@ -79,7 +89,7 @@ echo session_name() . "<br>";
             <input type="text" name="nombre" placeholder="Nombre" value=""/>
             <input type="text" name="telefono" placeholder="Telefono" value=""/>
             <input type="submit" value="Añadir" name="submit"/>
-            <input type="button" value="Borrar Sesión" name="">
+           <!-- <input type="button" value="Borrar Sesión" name="">-->
 
         </form>
         <h3 style="color: green">CONTACTOS</h3>
