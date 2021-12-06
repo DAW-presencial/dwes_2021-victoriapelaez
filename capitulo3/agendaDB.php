@@ -11,7 +11,6 @@ if (isset($_POST['nombre']) && isset($_POST['apellido']) && $_POST['telefono']) 
 
     $contacto = new Contacto($nombre, $apellido, $telefono);
 
-
     if (isset($_POST['agregar'])) {
         echo $contacto->agregarContacto();
     } else if (isset($_POST['editar'])) {
@@ -21,10 +20,7 @@ if (isset($_POST['nombre']) && isset($_POST['apellido']) && $_POST['telefono']) 
     }
 }
 
-
 ?>
-
-
     <html>
     <head>
         <title>agendaDB</title>
@@ -36,7 +32,6 @@ if (isset($_POST['nombre']) && isset($_POST['apellido']) && $_POST['telefono']) 
                 font-family: sans-serif;
                 font-weight: 100;
                 color: white;
-
             }
 
             .main-container {
@@ -106,16 +101,16 @@ if (isset($_POST['nombre']) && isset($_POST['apellido']) && $_POST['telefono']) 
             }
 
             thead {
+
             th {
                 background-color: #55608f;
             }
+
             }
 
             td {
-                text-align:center;
+                text-align: center;
             }
-
-
         </style>
     </head>
     <body>
@@ -129,8 +124,7 @@ if (isset($_POST['nombre']) && isset($_POST['apellido']) && $_POST['telefono']) 
                 apellido y presione el
                 boton -Editar Contactos-.
             </li>
-            <li class="lista">Para eliminar un contacto, escriba el número de teléfono que lo identifica, el nombre y
-                apellido y presione
+            <li class="lista">Para eliminar un contacto, escriba el número de teléfono que lo identifica y presione
                 el botón -Eliminar Contactos-.
             </li>
             <li class="lista">Para mostrar la agenda pulse -Mostrar Contactos-.</li>
