@@ -16,6 +16,7 @@ class Database
         try {
             $conn = new PDO("mysql:host=" . Database::HOST . ";dbname=" . Database::DBNAME, Database::USERNAME, Database::PASSWORD);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            echo "<br>";
             echo "Conexión realizada con la base de datos";
         } catch (PDOException $exception) {
             echo "Connection error: " . $exception->getMessage();

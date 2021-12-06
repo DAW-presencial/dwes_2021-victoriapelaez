@@ -18,10 +18,22 @@ class Contacto
     {
         $db = Database::getConnection();
         $stmt = $db->query('SELECT nombre,apellido,telefono FROM contactos order by apellido');
+        echo "<div class='tabla'>";
+        echo "<table>";
+        echo "<thead>";
+        echo "<tr>";
+        echo "<th>Apellido</th>";
+        echo "<th>Nombre</th>";
+        echo "<th>Teléfono</th>";
+        echo "</tr>";
+        echo "</thead>";
+        echo "<tbody>";
         while ($row = $stmt->fetch()) {
-            echo "<br>";
-            echo $row['apellido'] . " " . $row['nombre'] . ", " . $row['telefono'];
+            echo "<tr><td> " . $row['apellido'] . "</td><td> " . $row['nombre'] . "</td> <td>" . $row['telefono'] . "</td> </tr>";
         }
+        echo "</tbody>";
+        echo "</div>";
+        echo "</table>";
     }
 
     public function agregarContacto()
