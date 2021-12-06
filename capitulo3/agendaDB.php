@@ -5,18 +5,23 @@ require "clases/Contacto.php";
 
 if (isset($_POST['nombre'])  && isset($_POST['apellido']) && $_POST['telefono']) {
 
-    $nombre = htmlspecialchars(filter_input(INPUT_POST, 'nombre', ));
-    $apellido = htmlspecialchars(filter_input(INPUT_POST, 'apellido', ));
+    $nombre = htmlspecialchars(filter_input(INPUT_POST, 'nombre',));
+    $apellido = htmlspecialchars(filter_input(INPUT_POST, 'apellido',));
     $telefono = htmlspecialchars($_POST['telefono']);
 
     $contacto = new Contacto($nombre, $apellido, $telefono);
 
-    if (isset($_POST['agregar'])) {
-        echo $contacto->agregarContacto();
-    } else if (isset($_POST['editar'])) {
-        echo $contacto->editarcontacto();
-    } else if (isset($_POST['eliminar'])) {
-        echo $contacto->eliminarContacto();
+    if (!isset($contacto)) {
+        if (isset($_POST['agregar'])) {
+            echo $contacto->agregarContacto();
+        } else if (isset($_POST['editar'])) {
+            echo $contacto->editarcontacto();
+        } else if (isset($_POST['eliminar'])) {
+            echo $contacto->eliminarContacto();
+        }
+    }else{
+        echo "Este contacto ya existe<br>";
+        echo Contacto::mostrarContactos();
     }
 }
 
