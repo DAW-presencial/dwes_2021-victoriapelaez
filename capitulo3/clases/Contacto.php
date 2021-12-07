@@ -1,6 +1,5 @@
 <?php
 
-
 class Contacto
 {
     private $nombre;
@@ -36,6 +35,18 @@ class Contacto
         echo "</table>";
     }
 
+    public function contactoExiste()
+    {
+        $db = Database::getConnection();
+        $stmt_telefono = $db->query("select telefono from contactos where telefono = '$this->telefono'");
+        $data= $stmt_telefono->fetch();
+        if(!empty($data['telefono'])){
+            echo "<br>El contacto ya existe";
+        }else{
+            Contacto::agregarContacto();
+        }
+    }
+
     public function agregarContacto()
     {
         $db = Database::getConnection();
@@ -53,7 +64,6 @@ class Contacto
         echo "<br>Contacto editado";
     }
 
-
     public function eliminarContacto()
     {
         $db = Database::getConnection();
@@ -61,6 +71,5 @@ class Contacto
         $stmt_borrar = "delete from contactos where telefono='$this->telefono';";
         $db->exec($stmt_borrar);
         echo "<br>Contacto eliminado";
-
     }
 }

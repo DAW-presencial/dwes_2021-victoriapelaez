@@ -2,7 +2,6 @@
 require "basedatos/Database.php";
 require "clases/Contacto.php";
 
-
 if (isset($_POST['nombre']) && isset($_POST['apellido']) && $_POST['telefono']) {
 
     $nombre = htmlspecialchars(filter_input(INPUT_POST, 'nombre',));
@@ -12,14 +11,13 @@ if (isset($_POST['nombre']) && isset($_POST['apellido']) && $_POST['telefono']) 
     $contacto = new Contacto($nombre, $apellido, $telefono);
 
     if (isset($_POST['agregar'])) {
-        echo $contacto->agregarContacto();
+        $contacto->contactoExiste();
     } else if (isset($_POST['editar'])) {
         echo $contacto->editarcontacto();
     } else if (isset($_POST['eliminar'])) {
         echo $contacto->eliminarContacto();
     }
 }
-
 ?>
     <html>
     <head>
@@ -139,7 +137,6 @@ if (isset($_POST['nombre']) && isset($_POST['apellido']) && $_POST['telefono']) 
             <input type="submit" value="Mostrar Contactos" name="mostrar" class="boton"/>
         </form>
     </div>
-
     </body>
     </html>
 <?php
