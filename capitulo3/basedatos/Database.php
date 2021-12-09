@@ -11,6 +11,10 @@ class Database
     private function __construct(){
     }
 
+    /**
+     * @return PDO
+     * Funcion de acceso a la base de datos mediante PDO
+     */
     public static function getConnection()
     {
         try {

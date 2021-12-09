@@ -13,6 +13,10 @@ class Contacto
         $this->telefono = $telefono;
     }
 
+    /**
+     *Funcion que conecta con la base de datos y ejecuta una query para extraer los datos de la agendo solicitados
+     *Los datos se pintan en una tabla mediante un fetch asignando cada trio de datos a una fila
+     */
     public static function mostrarContactos()
     {
         $db = Database::getConnection();
@@ -35,6 +39,10 @@ class Contacto
         echo "</table>";
     }
 
+    /**
+     * Funcion que conecta con la base de datos y mediante la query elegida comprueba mediante el telefono, que es la clava primaria
+     * comprueba si existe o no existe. Si existe, avisa de que existe, pero si no existe, llama a la funcion agregarContacto.
+     */
     public function contactoExiste()
     {
         $db = Database::getConnection();
@@ -47,6 +55,9 @@ class Contacto
         }
     }
 
+    /**
+     * Funcion que inserta un nuevo contacto mediante una query insert y el metodo exec
+     */
     public function agregarContacto()
     {
         $db = Database::getConnection();
@@ -55,6 +66,10 @@ class Contacto
         echo "<br>Contacto agregado";
     }
 
+    /**
+     * Funcion para editar un contacto mediante una query update, mediante la eleccion del contacto mediante el telefono que es la clave
+     * primaria y cambiando la propiedad nombre o apellido
+     */
     public function editarContacto()
     {
         $db = Database::getConnection();
@@ -64,10 +79,13 @@ class Contacto
         echo "<br>Contacto editado";
     }
 
+    /**
+     * Funcion para eliminar un contacto. Hay que escribir el telefono y darle a eliminar porque borra por
+     * telefono porque es clave primaria.
+     */
     public function eliminarContacto()
     {
         $db = Database::getConnection();
-        //para eliminar contacto hay que escribir el nombre y el telefono y darle a eliminar porque borra por telefono porque es clave primaria
         $stmt_borrar = "delete from contactos where telefono='$this->telefono';";
         $db->exec($stmt_borrar);
         echo "<br>Contacto eliminado";

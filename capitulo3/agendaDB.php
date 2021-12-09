@@ -2,14 +2,21 @@
 require "basedatos/Database.php";
 require "clases/Contacto.php";
 
+
 if (isset($_POST['nombre']) && isset($_POST['apellido']) && $_POST['telefono']) {
 
+    //datos recogidos en los inputs
     $nombre = htmlspecialchars(filter_input(INPUT_POST, 'nombre',));
     $apellido = htmlspecialchars(filter_input(INPUT_POST, 'apellido',));
     $telefono = htmlspecialchars($_POST['telefono']);
 
+    //creación (instancia) del objeto tipo Contacto.
     $contacto = new Contacto($nombre, $apellido, $telefono);
 
+    /*Llamada a los diferentes metodos disponibles de la clase Contacto según el botón que el usuario clicke
+     *Si pulsa el boton agregar, primero llamará a la función para comprobar si el contacto ya existe. Si no existe, el metodo llamará
+     * a la función agregar
+     * El boton editar y eliminar van directamente a sus métodos*/
     if (isset($_POST['agregar'])) {
         $contacto->contactoExiste();
     } else if (isset($_POST['editar'])) {
@@ -19,6 +26,7 @@ if (isset($_POST['nombre']) && isset($_POST['apellido']) && $_POST['telefono']) 
     }
 }
 ?>
+<!--Formulario-->
     <html>
     <head>
         <title>agendaDB</title>
@@ -140,6 +148,7 @@ if (isset($_POST['nombre']) && isset($_POST['apellido']) && $_POST['telefono']) 
     </body>
     </html>
 <?php
+//llamada a la funcion que muestra la agenda al darle al boton
 if (isset($_POST['mostrar'])) {
     echo Contacto::mostrarContactos();
 }
