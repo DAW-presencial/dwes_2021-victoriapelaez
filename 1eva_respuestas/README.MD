@@ -23,3 +23,16 @@ Los archivos son subidos al mismo directorio que el archivo. Decidí no crear un
 pero se podría haber hecho y solo cambiar la ruta donde se almacenan en vez de en __DIR__
 Posteriormente, al final del documento, también se muestran los datos de los archivos enviados.
 
+#SOLUCIONES EXAMENES
+
+1. COOKIE
+Que es, se hace lado servidor, se envia por cabecera http, 7 partes
+2. dentro del metodo set, hacer un if(property_exists($this, $nom)){
+ return $this->nom =$value;}
+else{
+ $this ->nom =$value;}
+seria como una static, que se almacena igual para todos los objetos
+3. mecanismo, caducidad, utilidades, 
+4. a)si
+   b) se heredan 
+5. 
