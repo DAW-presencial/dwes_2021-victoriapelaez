@@ -3,7 +3,7 @@
 class Database
 {
     private const HOST = "localhost";
-    private const DBNAME = "agenda_pelaez";// para mysql agenda
+    private const DBNAME = "agenda_mpelaez";// para mysql agenda
     private const USERNAME = "mpelaez_usr";//para mysql victoria
     private const PASSWORD = "abc123."; //para mysql victoria1988
 
