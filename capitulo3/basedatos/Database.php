@@ -3,10 +3,9 @@
 class Database
 {
     private const HOST = "localhost";
-    private const DBNAME = "agenda";
-    private const USERNAME = "victoria";
-    private const PASSWORD = "victoria1988";
-    public static $conn;
+    private const DBNAME = "agenda_pelaez";// para mysql agenda
+    private const USERNAME = "mpelaez_usr";//para mysql victoria
+    private const PASSWORD = "abc123."; //para mysql victoria1988
 
     private function __construct(){
     }
@@ -18,7 +17,8 @@ class Database
     public static function getConnection()
     {
         try {
-            $conn = new PDO("mysql:host=" . Database::HOST . ";dbname=" . Database::DBNAME, Database::USERNAME, Database::PASSWORD);
+            //si usas mysql "mysql:host=" . Database::HOST . ";dbname=" . Database::DBNAME, Database::USERNAME, Database::PASSWORD
+            $conn = new PDO("pgsql:host=" . Database::HOST . ";dbname=" . Database::DBNAME, Database::USERNAME, Database::PASSWORD);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             echo "<br>";
             echo "Conexión realizada con la base de datos";
