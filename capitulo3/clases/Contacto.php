@@ -47,10 +47,10 @@ class Contacto
     {
         $db = Database::getConnection();
         $stmt_telefono = $db->query("select telefono from contactos where telefono = '$this->telefono'");
-        $data= $stmt_telefono->fetch();
-        if(!empty($data['telefono'])){
+        $data = $stmt_telefono->fetch();
+        if (!empty($data['telefono'])) {
             echo "<br>El contacto ya existe";
-        }else{
+        } else {
             Contacto::agregarContacto();
         }
     }
@@ -61,8 +61,8 @@ class Contacto
     public function agregarContacto()
     {
         $db = Database::getConnection();
-        $stmt_insert = "insert into contactos(nombre, apellido, telefono)values ('$this->nombre','$this->apellido','$this->telefono')";
-        $db->exec($stmt_insert);
+        $stmt_insert = $db->prepare("insert into contactos(nombre, apellido, telefono)values (?,?,?)");
+        $stmt_insert->execute([$this->nombre, $this->apellido, $this->telefono]);
         echo "<br>Contacto agregado";
     }
 
@@ -86,8 +86,8 @@ class Contacto
     public function eliminarContacto()
     {
         $db = Database::getConnection();
-        $stmt_borrar = "delete from contactos where telefono='$this->telefono';";
-        $db->exec($stmt_borrar);
+        $stmt_borrar = $db->prepare("delete from contactos where telefono=?;");
+        $stmt_borrar->execute([$this->telefono]);
         echo "<br>Contacto eliminado";
     }
 }
