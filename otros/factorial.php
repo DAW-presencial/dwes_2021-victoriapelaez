@@ -6,7 +6,7 @@ function factorial($num){
     }
 return $num*factorial($num-1);       
 }
-echo "el factorial de 3 es:".factorial(999);
-
+echo "el factorial de es:".factorial(170);
+//con 171 petan los decimales y sale inf
 
 ?>
